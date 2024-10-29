@@ -1,6 +1,5 @@
-from django.http import Http404
 from rest_framework.views import APIView
-from .models import Xona, Oqituvchi, Oquvchilar, Fani
+from .models import Xona, Oqituvchi, Fani
 from .serializers import XonaSerializer, OqituvchiSerializer, OquvchiSerializer, FanSerializer
 from rest_framework.response import Response
 from rest_framework import generics
@@ -183,13 +182,6 @@ class FanCreateAPIView(APIView):
             print("saqlash mumkin")
         else:
             print("Saqlash mumkin emas ", teachers[0])
-        # fanSerialzer = FanSerializer(data=data)
-        # if fanSerialzer.is_valid():
-        #     fanSerialzer.save()
-        #     data = {
-        #         "status": "OK",
-        #         "malumot": f"{fanSerialzer.data["nomi"]} saqlandi."
-        #     }
 
         return Response(data)
 
